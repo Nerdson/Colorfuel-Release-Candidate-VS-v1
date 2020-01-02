@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3247073033737159220}
   - component: {fileID: 370568682751120820}
   - component: {fileID: 4522653817784820385}
-  m_Layer: 0
+  m_Layer: 31
   m_Name: Layer1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -193,7 +193,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8641919240868611453}
   - component: {fileID: 6500239884293050107}
-  m_Layer: 0
+  m_Layer: 31
   m_Name: Grass_Palette
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -9,6 +9,8 @@ public class PauseMenu : MonoBehaviour
 
     private bool paused = false;
 
+    public AudioSource pauseSounds;
+
     void Start()
     {
         PauseUI.SetActive(false);
@@ -19,6 +21,7 @@ public class PauseMenu : MonoBehaviour
         if (Input.GetButtonDown("Pause"))
         {
             paused = !paused;
+            pauseSounds.Play();
         }
 
         if (paused)

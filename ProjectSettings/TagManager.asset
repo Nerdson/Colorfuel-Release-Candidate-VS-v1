@@ -15,10 +15,10 @@ TagManager:
   - 
   - 
   - Ground
-  - 
-  - 
-  - 
-  - 
+  - Player
+  - Dust
+  - Background
+  - Foreground
   - 
   - 
   - 
@@ -39,6 +39,27 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 1037822939
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Dust
+    uniqueID: 608833597
+    locked: 0
+  - name: Player
+    uniqueID: 3094647813
+    locked: 0
+  - name: Ground
+    uniqueID: 765381257
+    locked: 0
+  - name: Foreground
+    uniqueID: 2775168141
+    locked: 0
+  - name: Menu
+    uniqueID: 4065715073
+    locked: 0
+  - name: UI
+    uniqueID: 2479270659
     locked: 0

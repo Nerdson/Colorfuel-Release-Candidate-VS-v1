@@ -24,7 +24,7 @@ public class FallingNut : MonoBehaviour
             rb.isKinematic = false;
     }
 
-    void OnCollisionEnter2D(Collider2D other)
+    void Collision2D(Collider2D other)
     {
         if (other.name == "Crystine")
         {
