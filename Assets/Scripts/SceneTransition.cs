@@ -7,7 +7,7 @@ public class SceneTransition : MonoBehaviour
 {
     public Animator transitionAnim;
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider player)
     {
         StartCoroutine(LoadScene());
     }
