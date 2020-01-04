@@ -70,6 +70,7 @@
     <Compile Include="Assets\Scripts\Dialogue\Dialogue.cs" />
     <Compile Include="Assets\Scripts\Dialogue\DialogueManager.cs" />
     <Compile Include="Assets\Scripts\Dialogue\DialogueTrigger.cs" />
+    <Compile Include="Assets\Scripts\DialogueScript.cs" />
     <Compile Include="Assets\Scripts\Enemies\EnemyDeath.cs" />
     <Compile Include="Assets\Scripts\Enemies\EnemyHealthManager.cs" />
     <Compile Include="Assets\Scripts\Enemies\FallingNut.cs" />
@@ -78,6 +79,7 @@
     <Compile Include="Assets\Scripts\HealthPickup.cs" />
     <Compile Include="Assets\Scripts\KillPlayer.cs" />
     <Compile Include="Assets\Scripts\LevelManager.cs" />
+    <Compile Include="Assets\Scripts\MoveScenes.cs" />
     <Compile Include="Assets\Scripts\Parallax.cs" />
     <Compile Include="Assets\Scripts\Pause\PauseMenu.cs" />
     <Compile Include="Assets\Scripts\Platforms\FallingPlatform.cs" />

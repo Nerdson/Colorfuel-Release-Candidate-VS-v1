@@ -17,12 +17,6 @@ public class PlatformManager : MonoBehaviour
             Destroy(gameObject);
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     IEnumerator SpawnPlatform(Vector2 spawnPosition)
     {
         yield return new WaitForSeconds(4f);

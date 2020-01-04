@@ -23,7 +23,7 @@ public class HurtPlayer : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.name == "Crystine")
+        if (other.CompareTag("Player"))
         {
             animator.SetTrigger("Hurt");
 

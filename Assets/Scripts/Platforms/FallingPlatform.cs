@@ -18,7 +18,7 @@ public class FallingPlatform : MonoBehaviour
         if (collision.collider.CompareTag("Player"))
         {
             PlatformManager.Instance.StartCoroutine("SpawnPlatform",
-                new Vector2(transform.position.x, transform.position.y));
+                new Vector3(transform.position.x, transform.position.y, 50));
             StartCoroutine(Fall());
             Destroy(gameObject, 4f);
         }

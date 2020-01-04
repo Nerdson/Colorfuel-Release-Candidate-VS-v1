@@ -1,9 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class PauseMenu : MonoBehaviour
 {
+    public EventSystem ES;
+    private GameObject storeSelected;
 
     public GameObject PauseUI;
 
@@ -14,6 +17,8 @@ public class PauseMenu : MonoBehaviour
     void Start()
     {
         PauseUI.SetActive(false);
+
+        storeSelected = ES.firstSelectedGameObject;
     }
 
     void Update()
@@ -36,6 +41,13 @@ public class PauseMenu : MonoBehaviour
             Time.timeScale = 1;
         }
 
+        if(ES.currentSelectedGameObject != storeSelected)
+        {
+            if (ES.currentSelectedGameObject == null)
+                ES.SetSelectedGameObject(storeSelected);
+            else
+                storeSelected = ES.currentSelectedGameObject;
+        }
     }
 
     public void Resume()

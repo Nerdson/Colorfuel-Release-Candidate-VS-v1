@@ -69,51 +69,14 @@ public class PlayerController2D : MonoBehaviour
 
         }
         // Hier wird die Abfrage, ob sich die Figur in der Luft befindet, ausgeführt
-        if (isGrounded == true && Input.GetKeyDown(KeyCode.Space))
-        {
-            isJumping = true;
-            jumpTimeCounter = jumpTime;
-            rb.velocity = Vector2.up * jumpForce;
-            animator.SetBool("Grounded", false);
-            Coroutine coroutine = _ = StartCoroutine(JumpSqueeze(0.5f, 1.2f, 0.1f));
-        }
-
-        if (Input.GetKeyDown(KeyCode.Space) && extraJumps > 0)
-        {
-            rb.velocity = Vector2.up * jumpForce;
-            extraJumps--;
-        }
-        else if (Input.GetKeyDown(KeyCode.Space) && extraJumps == 0 && isGrounded == true)
-        {
-            rb.velocity = Vector2.up * jumpForce;
-        }
-        if (Input.GetKey(KeyCode.Space) && isJumping == true)
-        {
-            if (jumpTimeCounter > 0)
-            {
-                jumpSounds.Play();
-                dust.Play();
-                rb.velocity = Vector2.up * jumpForce;
-                jumpTimeCounter -= Time.deltaTime;
-            }
-            else
-            {
-                isJumping = false;
-            }
-        }
-        if (Input.GetKeyUp(KeyCode.Space))
-        {
-            isJumping = false;
-        }
-        animator.SetBool("Grounded", isGrounded);
-
-        // Controller-Steuerung fürs Springen
         if (isGrounded == true && Input.GetKeyDown(KeyCode.Joystick1Button0))
         {
             isJumping = true;
             jumpTimeCounter = jumpTime;
             rb.velocity = Vector2.up * jumpForce;
             animator.SetBool("Grounded", false);
+            Coroutine coroutine = _ = StartCoroutine(JumpSqueeze(0.5f, 1.2f, 0.1f));
+            jumpSounds.Play();
         }
 
         if (Input.GetKeyDown(KeyCode.Joystick1Button0) && extraJumps > 0)
@@ -129,6 +92,8 @@ public class PlayerController2D : MonoBehaviour
         {
             if (jumpTimeCounter > 0)
             {
+           
+                dust.Play();
                 rb.velocity = Vector2.up * jumpForce;
                 jumpTimeCounter -= Time.deltaTime;
             }
@@ -143,6 +108,7 @@ public class PlayerController2D : MonoBehaviour
         }
         animator.SetBool("Grounded", isGrounded);
     }
+        
 
     // Hier wird die Abfrage nach der Bodenberührung ausgeführt
     void FixedUpdate()

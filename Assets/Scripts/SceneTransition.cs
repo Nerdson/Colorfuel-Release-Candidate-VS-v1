@@ -7,14 +7,17 @@ public class SceneTransition : MonoBehaviour
 {
     public Animator transitionAnim;
 
-    private void OnTriggerEnter(Collider player)
+    private void OnTriggerEnter2D(Collider other)
     {
-        StartCoroutine(LoadScene());
+        if (other.CompareTag("Player"))
+        {
+            StartCoroutine(LoadScene());
+        }
     }
     IEnumerator LoadScene()
     {
         transitionAnim.SetTrigger("end");
         yield return new WaitForSeconds(1.5f);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
 }
