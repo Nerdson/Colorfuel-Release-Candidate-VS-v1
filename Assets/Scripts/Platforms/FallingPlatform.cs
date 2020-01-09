@@ -28,8 +28,6 @@ public class FallingPlatform : MonoBehaviour
     {
         yield return new WaitForSeconds(fallDelay);
         rb2d.isKinematic = false;
-        
-        
     }
 
 }

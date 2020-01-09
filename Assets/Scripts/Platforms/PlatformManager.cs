@@ -17,7 +17,7 @@ public class PlatformManager : MonoBehaviour
             Destroy(gameObject);
     }
 
-    IEnumerator SpawnPlatform(Vector2 spawnPosition)
+    IEnumerator SpawnPlatform(Vector3 spawnPosition)
     {
         yield return new WaitForSeconds(4f);
         Instantiate(platformPrefab, spawnPosition, platformPrefab.transform.rotation);

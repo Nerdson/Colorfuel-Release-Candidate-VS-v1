@@ -10,7 +10,7 @@ public class HealthManager : MonoBehaviour
     public static int playerHealth;
 
     // Text text;
-    public Slider healthBar;
+    
 
     private LevelManager levelManager;
 
@@ -20,13 +20,19 @@ public class HealthManager : MonoBehaviour
 
     private Animator animator;
 
+
+
+    public Sprite[] HeartSprites;
+
+    public Image HeartUI;
+
     // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<Animator>();
 
         // text = GetComponent<Text>();
-        healthBar = GetComponent<Slider>();
+        
 
         playerHealth = maxPlayerHealth;
 
@@ -40,18 +46,18 @@ public class HealthManager : MonoBehaviour
     {
         if(playerHealth <= 0 && !isDead)
         {
+            animator.SetTrigger("isDead");
             playerDeathSounds.Play();
             playerHealth = 0;
+            StartCoroutine(DeathAnim());
             levelManager.RespawnPlayer();
-            isDead = true;
-            animator.SetTrigger("isDead");
+            isDead = true;  
         }
 
         if (playerHealth > maxPlayerHealth)
             playerHealth = maxPlayerHealth;
 
-        // text.text = "" + playerHealth;
-        healthBar.value = playerHealth;
+        HeartUI.sprite = HeartSprites[playerHealth];
     }
 
     public static void HurtPlayer(int damageToGive)
@@ -63,5 +69,10 @@ public class HealthManager : MonoBehaviour
     public void FullHealth()
     {
         playerHealth = maxPlayerHealth;
+    }
+
+    IEnumerator DeathAnim()
+    {
+        yield return new WaitForSeconds(3f);
     }
 }

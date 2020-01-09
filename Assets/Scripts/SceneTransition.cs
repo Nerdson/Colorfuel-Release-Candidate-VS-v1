@@ -7,7 +7,7 @@ public class SceneTransition : MonoBehaviour
 {
     public Animator transitionAnim;
 
-    private void OnTriggerEnter2D(Collider other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
@@ -18,6 +18,6 @@ public class SceneTransition : MonoBehaviour
     {
         transitionAnim.SetTrigger("end");
         yield return new WaitForSeconds(1.5f);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

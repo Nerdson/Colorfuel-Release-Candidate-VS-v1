@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/01 Village_Outskirts.unity
+- path: Assets/Scenes/02 Witch_Forest.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
